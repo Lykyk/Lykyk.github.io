@@ -1,0 +1,828 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="english">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="翻译自Docker官方文档 https://docs.docker.com/engine/installation/linux/ubuntulinux/ 之前因为看不懂官方文档，卡在某个步骤无法完成安装。翻译一下安装部分，给自己也希望能给一些同学做参考。 我的英语水平很菜，不足之处请各位斧正。 国内从Docker官方下载文件会很慢，耐心等待，有时还会连不上，重试可能会成功。 UbuntuDocke">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu安装Docker">
+<meta property="og:url" content="https://lykyk.github.io/2016/11/14/11/index.html">
+<meta property="og:site_name" content="Tomoto Hut">
+<meta property="og:description" content="翻译自Docker官方文档 https://docs.docker.com/engine/installation/linux/ubuntulinux/ 之前因为看不懂官方文档，卡在某个步骤无法完成安装。翻译一下安装部分，给自己也希望能给一些同学做参考。 我的英语水平很菜，不足之处请各位斧正。 国内从Docker官方下载文件会很慢，耐心等待，有时还会连不上，重试可能会成功。 UbuntuDocke">
+<meta property="og:updated_time" content="2017-06-19T02:07:01.168Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu安装Docker">
+<meta name="twitter:description" content="翻译自Docker官方文档 https://docs.docker.com/engine/installation/linux/ubuntulinux/ 之前因为看不懂官方文档，卡在某个步骤无法完成安装。翻译一下安装部分，给自己也希望能给一些同学做参考。 我的英语水平很菜，不足之处请各位斧正。 国内从Docker官方下载文件会很慢，耐心等待，有时还会连不上，重试可能会成功。 UbuntuDocke">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://lykyk.github.io/2016/11/14/11/"/>
+
+
+
+
+
+  <title>Ubuntu安装Docker | Tomoto Hut</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="english">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tomoto Hut</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Lykyk's blogs</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://lykyk.github.io/2016/11/14/11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lykyk">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tomoto Hut">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Ubuntu安装Docker</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-14T17:05:41+08:00">
+                2016-11-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AI-人工智能/" itemprop="url" rel="index">
+                    <span itemprop="name">AI(人工智能)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>翻译自Docker官方文档</p>
+<p><a href="https://docs.docker.com/engine/installation/linux/ubuntulinux/" target="_blank" rel="external">https://docs.docker.com/engine/installation/linux/ubuntulinux/</a></p>
+<p>之前因为看不懂官方文档，卡在某个步骤无法完成安装。翻译一下安装部分，给自己也希望能给一些同学做参考。</p>
+<p>我的英语水平很菜，不足之处请各位斧正。</p>
+<p>国内从Docker官方下载文件会很慢，耐心等待，有时还会连不上，重试可能会成功。</p>
+<h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><p>Docker 在支持这些Ubuntu操作系统：</p>
+<ul>
+<li>Ubuntu Xenial 16.04 (LTS)</li>
+<li>Ubuntu Trusty 14.04 (LTS)</li>
+<li>Ubuntu Precise 12.04 (LTS)<br><strong>注意</strong>：Ubuntu Utopic 14.10 和 15.04存在于Docker的APT存储库,但不再是官方长时间支持。</li>
+</ul>
+<h1 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h1><p>Docker 要求安装64位系统，无论是什么Ubuntu版本。此外，你的内核版本不能低于3.10。最新的3.10小版本或更新维护版本也是可以接受的。</p>
+<p>&nbsp;</p>
+<p>3.10内核缺乏运行Docker容器所需的一些特性。这些旧版本在某些情况下已知的一些bug会导致数据丢失和频繁的不稳定。</p>
+<p>&nbsp;</p>
+<p>检查你现在的内核版本，打开终端使用uname -r去显示你的内核版本：</p>
+<p>&nbsp;</p>
+<p>$ uname -r3.11.0-15-generic</p>
+<p>&nbsp;</p>
+<p><strong>注意</strong>：如果你以前使用APT安装过Docker，确保你更新了你的APT Docker来源库。</p>
+<h1 id="升级你的apt来源库"><a href="#升级你的apt来源库" class="headerlink" title="升级你的apt来源库"></a>升级你的apt来源库</h1><p>Docker的APT库包含Docker 1.7.1和更高的版本。设置APT使用的程序包含来自Docker库：</p>
+<p>&nbsp;</p>
+<ol>
+<li>以sudo或root特权模式登入的的机器。</li>
+<li>打开一个终端窗口。</li>
+<li>升级包信息，确保APT使用https的方法工作，与安装CA证书。<br>&nbsp;</li>
+</ol>
+<p>$ sudo apt-get update$ sudo apt-get install apt-transport-https ca-certificates 4. 添加新的GPG key</p>
+<p>&nbsp;</p>
+<p>$ sudo apt-key adv –keyserver hkp://p80.pool.sks-keyservers.net:80 –recv-keys 58118E89F3A912897C070ADBF76221572C52609D 5. 找到你的Ubuntu操作系统的条目，它决定了APT将搜索的包。可能的项:</p>
+<p><table></table></p>
+<p><thead></thead></p>
+<p><tr></tr></p>
+<p><td width="195"><strong>Ubuntu version</strong></td></p>
+<p><td width="521"><strong>Repository</strong></td><br><br></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td width="195">Precise 12.04 (LTS)</td></p>
+<p><td width="521">deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-precise main</td><br></p>
+<p><tr></tr></p>
+<p><td width="195">Trusty 14.04 (LTS)</td></p>
+<p><td width="521">deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-trusty main</td><br></p>
+<p><tr></tr></p>
+<p><td width="195">Xenial 16.04 (LTS)</td></p>
+<p><td width="521">deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-xenial main</td><br><br><br><br>6. 运行以下命令,将占位符&lt;REPO&gt;替换为您的操作系统的条目（Repository） $ echo “&lt;REPO&gt;” | sudo tee /etc/apt/sources.list.d/docker.list 例如：Ubuntu 16.04使用如下命令：$ echo “deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-xenial main” | sudo tee /etc/apt/sources.list.d/docker.list  7. 升级APT包索引 $ sudo apt-get update 8. 验证APT从正确的库拉取。 运行下面的命令时，将返回每个可供您安装的Docker版本的条目。每个条目应该有URL   <a href="https://apt.dockerproject.org/repo/。当前安装的版本使用*" target="_blank" rel="external">https://apt.dockerproject.org/repo/。当前安装的版本使用*</a> <em> </em>标记。下面是截断的输出。 $ apt-cache policy docker-engine   docker-engine:    Installed: 1.12.2-0~trusty    Candidate: 1.12.2-0~trusty    Version table:   <em>*</em> 1.12.2-0~trusty 0          500 <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="external">https://apt.dockerproject.org/repo/</a> ubuntu-trusty/main amd64 Packages          100 /var/lib/dpkg/status       1.12.1-0~trusty 0          500 <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="external">https://apt.dockerproject.org/repo/</a> ubuntu-trusty/main amd64 Packages       1.12.0-0~trusty 0          500 <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="external">https://apt.dockerproject.org/repo/</a> ubuntu-trusty/main amd64 Packages       1.11.2-0~trusty 0          500 <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="external">https://apt.dockerproject.org/repo/</a> ubuntu-trusty/main amd64 Packages       1.11.1-0~trusty 0          500 <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="external">https://apt.dockerproject.org/repo/</a> ubuntu-trusty/main amd64 Packages 从现在起，当你运行apt-get upgrade，APT从新的库拉取。</p>
+<h1 id="各Ubuntu版本的必备条件"><a href="#各Ubuntu版本的必备条件" class="headerlink" title="各Ubuntu版本的必备条件"></a>各Ubuntu版本的必备条件</h1><ul>
+<li>Ubuntu Xenial 16.04 (LTS)</li>
+<li>Ubuntu Trusty 14.04 (LTS)<br>对于Ubuntu Trusty和Xenial，建议安装linux-image-extra-<em> 内核包。这些linux-image-extra-</em> 包允许你使用aufs存储驱动。</li>
+</ul>
+<p>&nbsp;</p>
+<p>安装linux-image-extra-*包：</p>
+<p>&nbsp;</p>
+<p>1.在你的Ubuntu主机打开一个终端</p>
+<p>2.升级你的包管理器</p>
+<p>&nbsp;</p>
+<p>$ sudo apt-get update</p>
+<p>3.安装建议的包</p>
+<p>&nbsp;</p>
+<p>$ sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual</p>
+<p>&nbsp;</p>
+<p>4.继续安装Docker</p>
+<h2 id="Ubuntu-Precise-12-04-LTS"><a href="#Ubuntu-Precise-12-04-LTS" class="headerlink" title="Ubuntu Precise 12.04 (LTS)"></a>Ubuntu Precise 12.04 (LTS)</h2><p>对于Ubuntu Precise ，Docker要求3.13内核版本。如果你的内核版本低于3.13，你必须升级它。参考这个表看哪些包是你的环境需要的：</p>
+<p><table></table></p>
+<p><thead></thead></p>
+<p><tr></tr></p>
+<p><td width="233"><strong>Package</strong></td></p>
+<p><td width="537"><strong>Description</strong></td><br><br></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td width="233"><strong>linux-image-generic-lts-trusty</strong></td></p>
+<p><td width="537">Generic Linux kernel image. This kernel has AUFS built in. This is required to run Docker.</td><br></p>
+<p><tr></tr></p>
+<p><td width="233"><strong>linux-headers-generic-lts-trusty</strong></td></p>
+<p><td width="537">Allows packages such as ZFS and VirtualBox guest additions which depend on them. If you didn’t install the headers for your existing kernel, then you can skip these headers for the”trusty” kernel. If you’re unsure, you should include this package for safety.</td><br></p>
+<p><tr></tr></p>
+<p><td width="233"><strong>xserver-xorg-lts-trusty</strong></td></p>
+<p><td width="537">Optional in non-graphical environments without Unity/Xorg. Required when running Docker on machine with a graphical environment.</td><br></p>
+<p><tr></tr></p>
+<p><td width="233"><strong>libgl1-mesa-glx-lts-trusty</strong></td></p>
+<p><td width="537">To learn more about the reasons for these packages, read the installation instructions for backported kernels, specifically the <a href="https://wiki.ubuntu.com/Kernel/LTSEnablementStack" target="_blank" rel="external">LTS Enablement Stack</a> — refer to note 5 under each version.</td><br><br><br><br>&nbsp;</p>
+<p>升级您的内核和安装额外的包,执行以下操作：</p>
+<p>&nbsp;</p>
+<ol>
+<li>在你的Ubuntu主机打开一个终端</li>
+<li>升级你的包管理器<br>&nbsp;</li>
+</ol>
+<p>$ sudo apt-get update</p>
+<p>&nbsp;</p>
+<ol>
+<li>安装必需和可选包<br>&nbsp;</li>
+</ol>
+<p>$ sudo apt-get install linux-image-generic-lts-trusty</p>
+<p>&nbsp;</p>
+<p>取决于您的环境,您可能安装上表中所描述的。</p>
+<p>&nbsp;</p>
+<ol>
+<li>重启你的主机<br>&nbsp;</li>
+</ol>
+<p>$ sudo reboot 5. 你的系统重启后，继续安装Docker</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>&nbsp;</p>
+<p>确保你的Ubuntu版本完成了对应必备条件的准备：</p>
+<p>&nbsp;</p>
+<p>然后，执行以下操作安装Docker：</p>
+<p>&nbsp;</p>
+<ol>
+<li>作为sudo特权用户登入你的Ubuntu进行安装</li>
+<li>升级你的APT包索引<br>&nbsp;</li>
+</ol>
+<p>$ sudo apt-get update</p>
+<p>&nbsp;</p>
+<ol>
+<li>安装Docker<br>&nbsp;</li>
+</ol>
+<p>$ sudo apt-get install docker-engine</p>
+<p>&nbsp;</p>
+<ol>
+<li>启动docker守护进程<br>&nbsp;</li>
+</ol>
+<p>$ sudo service docker start</p>
+<ol>
+<li>确认docker安装正确<br>&nbsp;</li>
+</ol>
+<p>$ sudo docker run hello-world 此命令将下载一个测试镜像并在一个容器里运行它，当容器运行，它打印一个消息性信息。然后退出。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/14/hello-world-1/" rel="next" title="世界，您好！">
+                <i class="fa fa-chevron-left"></i> 世界，您好！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/13/windows-xp-e3-80-817-e3-80-8110-e9-80-9a-e7-94-a8-e7-9a-84vbscript-e8-84-9a-e6-9c-ac/" rel="prev" title="Windows XP、7、10通用的VBScript脚本">
+                Windows XP、7、10通用的VBScript脚本 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Lykyk" />
+          <p class="site-author-name" itemprop="name">Lykyk</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前提条件"><span class="nav-number">2.</span> <span class="nav-text">前提条件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#升级你的apt来源库"><span class="nav-number">3.</span> <span class="nav-text">升级你的apt来源库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#各Ubuntu版本的必备条件"><span class="nav-number">4.</span> <span class="nav-text">各Ubuntu版本的必备条件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu-Precise-12-04-LTS"><span class="nav-number">4.1.</span> <span class="nav-text">Ubuntu Precise 12.04 (LTS)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">5.</span> <span class="nav-text">安装</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lykyk</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="">
+<html class="theme-next mist use-motion" lang="english">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -93,16 +93,18 @@
 
 
 
-<meta name="description" content="配置环境安装Node.js (安装 7.x 及以前的版本，8.0版本开始不支持fs.SyncWriteStream，而Hexo会用到)安装Git申请GitHub账户安装Hexo安装 hexo-deployer-git。(在hexo目录安装) 1$ npm install hexo-deployer-git --save 修改配置。 12345deploy:  type: git  repo: &amp;l">
+<meta name="description" content="转自：http://www.cnblogs.com/me115/archive/2011/04/27/2030762.html 一：回车”（Carriage Return）和“换行”（Line Feed）起源  首先，弄清两个概念：                 回车CR-将光标移动到当前行的开头。                换行LF-将光标“垂直”移动到下一行。（而并不移动到下一行的开头，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo + GitHub Pages 搭建个人博客">
-<meta property="og:url" content="https://lykyk.github.io/2017/06/18/Hexo/index.html">
+<meta property="og:title" content="回车(CR)与换行(LF)， &#39;&#39;和&#39;
+&#39;的区别">
+<meta property="og:url" content="https://lykyk.github.io/2017/03/27/e5-9b-9e-e8-bd-a6cr-e4-b8-8e-e6-8d-a2-e8-a1-8clf-ef-bc-8c-r-e5-92-8cn-e7-9a-84-e5-8c-ba-e5-88-ab/index.html">
 <meta property="og:site_name" content="Tomoto Hut">
-<meta property="og:description" content="配置环境安装Node.js (安装 7.x 及以前的版本，8.0版本开始不支持fs.SyncWriteStream，而Hexo会用到)安装Git申请GitHub账户安装Hexo安装 hexo-deployer-git。(在hexo目录安装) 1$ npm install hexo-deployer-git --save 修改配置。 12345deploy:  type: git  repo: &amp;l">
-<meta property="og:updated_time" content="2017-06-18T09:52:27.129Z">
+<meta property="og:description" content="转自：http://www.cnblogs.com/me115/archive/2011/04/27/2030762.html 一：回车”（Carriage Return）和“换行”（Line Feed）起源  首先，弄清两个概念：                 回车CR-将光标移动到当前行的开头。                换行LF-将光标“垂直”移动到下一行。（而并不移动到下一行的开头，">
+<meta property="og:updated_time" content="2017-06-19T02:07:01.168Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo + GitHub Pages 搭建个人博客">
-<meta name="twitter:description" content="配置环境安装Node.js (安装 7.x 及以前的版本，8.0版本开始不支持fs.SyncWriteStream，而Hexo会用到)安装Git申请GitHub账户安装Hexo安装 hexo-deployer-git。(在hexo目录安装) 1$ npm install hexo-deployer-git --save 修改配置。 12345deploy:  type: git  repo: &amp;l">
+<meta name="twitter:title" content="回车(CR)与换行(LF)， &#39;&#39;和&#39;
+&#39;的区别">
+<meta name="twitter:description" content="转自：http://www.cnblogs.com/me115/archive/2011/04/27/2030762.html 一：回车”（Carriage Return）和“换行”（Line Feed）起源  首先，弄清两个概念：                 回车CR-将光标移动到当前行的开头。                换行LF-将光标“垂直”移动到下一行。（而并不移动到下一行的开头，">
 
 
 
@@ -110,8 +112,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -130,13 +132,14 @@
 
 
 
-  <link rel="canonical" href="https://lykyk.github.io/2017/06/18/Hexo/"/>
+  <link rel="canonical" href="https://lykyk.github.io/2017/03/27/e5-9b-9e-e8-bd-a6cr-e4-b8-8e-e6-8d-a2-e8-a1-8clf-ef-bc-8c-r-e5-92-8cn-e7-9a-84-e5-8c-ba-e5-88-ab/"/>
 
 
 
 
 
-  <title>Hexo + GitHub Pages 搭建个人博客 | Tomoto Hut</title>
+  <title>回车(CR)与换行(LF)， ''和'
+'的区别 | Tomoto Hut</title>
   
 
 
@@ -154,7 +157,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="english">
 
   
   
@@ -177,7 +180,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">Lykyk's blogs</p>
       
   </div>
 
@@ -202,7 +205,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
           </a>
         </li>
       
@@ -212,7 +225,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -255,10 +268,10 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://lykyk.github.io/2017/06/18/Hexo/">
+    <link itemprop="mainEntityOfPage" href="https://lykyk.github.io/2017/03/27/e5-9b-9e-e8-bd-a6cr-e4-b8-8e-e6-8d-a2-e8-a1-8clf-ef-bc-8c-r-e5-92-8cn-e7-9a-84-e5-8c-ba-e5-88-ab/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Lykyk">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -272,7 +285,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo + GitHub Pages 搭建个人博客</h1>
+          <h1 class="post-title" itemprop="name headline">回车(CR)与换行(LF)， ''和'
+'的区别</h1>
         
 
         <div class="post-meta">
@@ -282,10 +296,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T16:43:50+08:00">
-                2017-06-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-27T11:36:51+08:00">
+                2017-03-27
               </time>
             
 
@@ -294,6 +308,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AI-人工智能/" itemprop="url" rel="index">
+                    <span itemprop="name">AI(人工智能)</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -319,33 +355,24 @@
       
 
       
-        <h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><h2 id="安装Node-js-安装-7-x-及以前的版本，8-0版本开始不支持fs-SyncWriteStream，而Hexo会用到"><a href="#安装Node-js-安装-7-x-及以前的版本，8-0版本开始不支持fs-SyncWriteStream，而Hexo会用到" class="headerlink" title="安装Node.js (安装 7.x 及以前的版本，8.0版本开始不支持fs.SyncWriteStream，而Hexo会用到)"></a>安装Node.js (安装 7.x 及以前的版本，8.0版本开始不支持fs.SyncWriteStream，而Hexo会用到)</h2><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><h2 id="申请GitHub账户"><a href="#申请GitHub账户" class="headerlink" title="申请GitHub账户"></a>申请GitHub账户</h2><h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>安装 hexo-deployer-git。(在hexo目录安装)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<p>修改配置。</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">[branch]</span></div><div class="line"><span class="attr">  message:</span> <span class="string">[message]</span></div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>repo</td>
-<td>库（Repository）地址</td>
-</tr>
-<tr>
-<td>branch</td>
-<td>分支名称。如果您使用的是 GitHub 或 GitCafe 的话，程序会尝试自动检测。</td>
-</tr>
-<tr>
-<td>message</td>
-<td>自定义提交信息 (默认为 Site updated: { { now(‘YYYY-MM-DD HH:mm:ss’)  } }  )</td>
-</tr>
-</tbody>
-</table>
-<p>非完整教程，如需完整教程请百度👉<a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;tn=monline_3_dg&amp;wd=hexo&amp;oq=hexo&amp;rsv_pq=8714376800035686&amp;rsv_t=96ebEYIg1%2FbecHTC%2FHjQxhzbp1jqPwnpxUJDF9qjRTWEQhV1KKKLx280mjNbyZ1oFv%2Bd&amp;rqlang=cn&amp;rsv_enter=0&amp;rsv_sug3=11&amp;rsv_sug1=10&amp;rsv_sug7=100&amp;rsv_sug4=899&amp;rsv_sug=1" target="_blank" rel="external">hexo</a></p>
+        <p>转自：<a href="http://www.cnblogs.com/me115/archive/2011/04/27/2030762.html" target="_blank" rel="external">http://www.cnblogs.com/me115/archive/2011/04/27/2030762.html</a></p>
+<p>一：回车”（Carriage Return）和“换行”（Line Feed）起源</p>
+<pre><code> 首先，弄清两个概念：
+
+               回车CR-将光标移动到当前行的开头。
+               换行LF-将光标“垂直”移动到下一行。（而并不移动到下一行的开头，即不改变光标水平位置）
+
+在计算机还没有出现之前，有一种叫做电传打字机（Teletype Model 33，Linux/Unix下的tty概念也来自于此）的玩意，每秒钟可以打10个字符。但是它有一个问题，就是打完一行换行的时候，要用去0.2秒，正好可以打两个字符。要是在这0.2秒里面，又有新的字符传过来，那么这个字符将丢失。
+</code></pre><p>   于是，研制人员想了个办法解决这个问题，就是在每行后面加两个表示结束的字符。一个叫做“回车”，告诉打字机把打印头定位在左边界；另一个叫做“换行”，告诉打字机把纸向下移一行。这就是“换行”和“回车”的来历，从它们的英语名字上也可以看出一二。<br>   后来，计算机发明了，这两个概念也就被般到了计算机上。那时，存储器很贵，一些科学家认为在每行结尾加两个字符太浪费了，加一个就可以。于是，就出现了分歧。<br>   Unix系统里，每行结尾只有“&lt;换行&gt;”，即”\n”；Windows系统里面，每行结尾是“&lt;换行&gt;&lt;回车&gt;”，即“\n\r”；Mac系统里，每行结尾是“&lt;回车&gt;”，即”\n”；。一个直接后果是，Unix/Mac系统下的文件在 Windows里打开的话，所有文字会变成一行；而Windows里的文件在Unix/Mac下打开的话，在每行的结尾可能会多出一个^M符号。</p>
+<p>二：区别</p>
+<p>CR用符号’\r’表示, 十进制ASCII代码是13, 十六进制代码为0x0D</p>
+<p>LF使用’\n’符号表示, ASCII代码是10, 十六制为0x0A</p>
+<p>Dos和windows采用回车+换行CR/LF表示下一行,如VB使用 vbCrLf 表示文本换行,</p>
+<p>而UNIX/Linux采用换行符LF表示下一行，如C语言一般使用 \n 表示文本换行,</p>
+<p>苹果机(MAC OS系统)则采用回车符CR表示下一行.</p>
+<p>所以Windows平台上换行在文本文件中是使用 0d 0a 两个字节表示, 而UNIX和苹果平台上换行则是使用0a或0d一个字节表示.</p>
+<p>注1：关于“回车键”的来历，还得从机械英文打字机说起。在机械英文打字机上，有一个部件叫“字车”，每打一个单词，“字车”就前进一格。当打满一行字符 后，打字者就得推动“字车”到起始位置，这时打字机会有两个动作响应：一是“字车”被归位，二是滚筒上卷一行，以便开始输入下一行，这个推动“字车”的动 作叫“回车”。</p>
+<p>注2：这种差别在编程、不同OS之间传输纯文本时最需要注意。</p>
 
       
     </div>
@@ -382,8 +409,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/17/My-New-Post/" rel="next" title="My New Post">
-                <i class="fa fa-chevron-left"></i> My New Post
+              <a href="/2017/03/13/windows-xp-e3-80-817-e3-80-8110-e9-80-9a-e7-94-a8-e7-9a-84vbscript-e8-84-9a-e6-9c-ac/" rel="next" title="Windows XP、7、10通用的VBScript脚本">
+                <i class="fa fa-chevron-left"></i> Windows XP、7、10通用的VBScript脚本
               </a>
             
           </div>
@@ -391,6 +418,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/22/win10-e5-bf-ab-e6-8d-b7-e6-96-b9-e5-bc-8f-e5-9b-be-e6-a0-87-e5-8f-98-e7-99-bd-e6-96-b9-e6-a1-86-ef-bc-8c-e6-80-8e-e4-b9-88-e5-8a-9e-ef-bc-9f/" rel="prev" title="win10(快捷方式)图标变白/方框，怎么办？">
+                win10(快捷方式)图标变白/方框，怎么办？ <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -437,22 +468,13 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
+               alt="Lykyk" />
+          <p class="site-author-name" itemprop="name">Lykyk</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
           
@@ -462,12 +484,21 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
           
 
           
@@ -492,22 +523,6 @@
       </section>
 
       
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置环境"><span class="nav-number">1.</span> <span class="nav-text">配置环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Node-js-安装-7-x-及以前的版本，8-0版本开始不支持fs-SyncWriteStream，而Hexo会用到"><span class="nav-number">1.1.</span> <span class="nav-text">安装Node.js (安装 7.x 及以前的版本，8.0版本开始不支持fs.SyncWriteStream，而Hexo会用到)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Git"><span class="nav-number">1.2.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#申请GitHub账户"><span class="nav-number">1.3.</span> <span class="nav-text">申请GitHub账户</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">安装Hexo</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
 
       
 
@@ -528,18 +543,18 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Lykyk</span>
 </div>
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
   Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Mist
   </a>
 </div>
 

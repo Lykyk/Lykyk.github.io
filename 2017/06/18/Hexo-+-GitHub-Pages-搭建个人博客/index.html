@@ -93,13 +93,16 @@
 
 
 
+<meta name="description" content="配置环境安装Node.js (安装 7.x 及以前的版本，8.0版本开始不支持fs.SyncWriteStream，而Hexo会用到)安装Git申请GitHub账户安装Hexo安装 hexo-deployer-git。(在hexo目录安装) 1$ npm install hexo-deployer-git --save 修改配置。 12345deploy:  type: git  repo: &amp;l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My New Post">
-<meta property="og:url" content="https://lykyk.github.io/2017/06/17/My-New-Post/index.html">
+<meta property="og:title" content="Hexo + GitHub Pages 搭建个人博客">
+<meta property="og:url" content="https://lykyk.github.io/2017/06/18/Hexo-+-GitHub-Pages-搭建个人博客/index.html">
 <meta property="og:site_name" content="Tomoto Hut">
-<meta property="og:updated_time" content="2017-06-17T02:25:28.986Z">
+<meta property="og:description" content="配置环境安装Node.js (安装 7.x 及以前的版本，8.0版本开始不支持fs.SyncWriteStream，而Hexo会用到)安装Git申请GitHub账户安装Hexo安装 hexo-deployer-git。(在hexo目录安装) 1$ npm install hexo-deployer-git --save 修改配置。 12345deploy:  type: git  repo: &amp;l">
+<meta property="og:updated_time" content="2017-06-18T09:52:27.129Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My New Post">
+<meta name="twitter:title" content="Hexo + GitHub Pages 搭建个人博客">
+<meta name="twitter:description" content="配置环境安装Node.js (安装 7.x 及以前的版本，8.0版本开始不支持fs.SyncWriteStream，而Hexo会用到)安装Git申请GitHub账户安装Hexo安装 hexo-deployer-git。(在hexo目录安装) 1$ npm install hexo-deployer-git --save 修改配置。 12345deploy:  type: git  repo: &amp;l">
 
 
 
@@ -127,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="https://lykyk.github.io/2017/06/17/My-New-Post/"/>
+  <link rel="canonical" href="https://lykyk.github.io/2017/06/18/Hexo-+-GitHub-Pages-搭建个人博客/"/>
 
 
 
 
 
-  <title>My New Post | Tomoto Hut</title>
+  <title>Hexo + GitHub Pages 搭建个人博客 | Tomoto Hut</title>
   
 
 
@@ -262,7 +265,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://lykyk.github.io/2017/06/17/My-New-Post/">
+    <link itemprop="mainEntityOfPage" href="https://lykyk.github.io/2017/06/18/Hexo-+-GitHub-Pages-搭建个人博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lykyk">
@@ -279,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">My New Post</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo + GitHub Pages 搭建个人博客</h1>
         
 
         <div class="post-meta">
@@ -291,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-17T10:25:28+08:00">
-                2017-06-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T16:43:50+08:00">
+                2017-06-18
               </time>
             
 
@@ -326,7 +329,34 @@
       
 
       
-        
+        <h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><h2 id="安装Node-js-安装-7-x-及以前的版本，8-0版本开始不支持fs-SyncWriteStream，而Hexo会用到"><a href="#安装Node-js-安装-7-x-及以前的版本，8-0版本开始不支持fs-SyncWriteStream，而Hexo会用到" class="headerlink" title="安装Node.js (安装 7.x 及以前的版本，8.0版本开始不支持fs.SyncWriteStream，而Hexo会用到)"></a>安装Node.js (安装 7.x 及以前的版本，8.0版本开始不支持fs.SyncWriteStream，而Hexo会用到)</h2><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><h2 id="申请GitHub账户"><a href="#申请GitHub账户" class="headerlink" title="申请GitHub账户"></a>申请GitHub账户</h2><h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>安装 hexo-deployer-git。(在hexo目录安装)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p>修改配置。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">[branch]</span></div><div class="line"><span class="attr">  message:</span> <span class="string">[message]</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>repo</td>
+<td>库（Repository）地址</td>
+</tr>
+<tr>
+<td>branch</td>
+<td>分支名称。如果您使用的是 GitHub 或 GitCafe 的话，程序会尝试自动检测。</td>
+</tr>
+<tr>
+<td>message</td>
+<td>自定义提交信息 (默认为 Site updated: { { now(‘YYYY-MM-DD HH:mm:ss’)  } }  )</td>
+</tr>
+</tbody>
+</table>
+<p>非完整教程，如需完整教程请百度👉<a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;tn=monline_3_dg&amp;wd=hexo&amp;oq=hexo&amp;rsv_pq=8714376800035686&amp;rsv_t=96ebEYIg1%2FbecHTC%2FHjQxhzbp1jqPwnpxUJDF9qjRTWEQhV1KKKLx280mjNbyZ1oFv%2Bd&amp;rqlang=cn&amp;rsv_enter=0&amp;rsv_sug3=11&amp;rsv_sug1=10&amp;rsv_sug7=100&amp;rsv_sug4=899&amp;rsv_sug=1" target="_blank" rel="external">hexo</a></p>
+
       
     </div>
 
@@ -362,8 +392,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/16/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/06/17/My-New-Post/" rel="next" title="My New Post">
+                <i class="fa fa-chevron-left"></i> My New Post
               </a>
             
           </div>
@@ -371,10 +401,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/18/Hexo-+-GitHub-Pages-搭建个人博客/" rel="prev" title="Hexo + GitHub Pages 搭建个人博客">
-                Hexo + GitHub Pages 搭建个人博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -421,8 +447,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -475,6 +510,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置环境"><span class="nav-number">1.</span> <span class="nav-text">配置环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Node-js-安装-7-x-及以前的版本，8-0版本开始不支持fs-SyncWriteStream，而Hexo会用到"><span class="nav-number">1.1.</span> <span class="nav-text">安装Node.js (安装 7.x 及以前的版本，8.0版本开始不支持fs.SyncWriteStream，而Hexo会用到)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Git"><span class="nav-number">1.2.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#申请GitHub账户"><span class="nav-number">1.3.</span> <span class="nav-text">申请GitHub账户</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">安装Hexo</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
