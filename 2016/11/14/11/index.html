@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Ubuntu," />
 
 
 
@@ -94,12 +94,13 @@
 
 
 <meta name="description" content="翻译自Docker官方文档 https://docs.docker.com/engine/installation/linux/ubuntulinux/ 之前因为看不懂官方文档，卡在某个步骤无法完成安装。翻译一下安装部分，给自己也希望能给一些同学做参考。 我的英语水平很菜，不足之处请各位斧正。 国内从Docker官方下载文件会很慢，耐心等待，有时还会连不上，重试可能会成功。 UbuntuDocke">
+<meta name="keywords" content="Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu安装Docker">
 <meta property="og:url" content="https://lykyk.github.io/2016/11/14/11/index.html">
 <meta property="og:site_name" content="Tomato Hut">
 <meta property="og:description" content="翻译自Docker官方文档 https://docs.docker.com/engine/installation/linux/ubuntulinux/ 之前因为看不懂官方文档，卡在某个步骤无法完成安装。翻译一下安装部分，给自己也希望能给一些同学做参考。 我的英语水平很菜，不足之处请各位斧正。 国内从Docker官方下载文件会很慢，耐心等待，有时还会连不上，重试可能会成功。 UbuntuDocke">
-<meta property="og:updated_time" content="2017-06-19T03:07:16.287Z">
+<meta property="og:updated_time" content="2017-06-19T13:36:07.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu安装Docker">
 <meta name="twitter:description" content="翻译自Docker官方文档 https://docs.docker.com/engine/installation/linux/ubuntulinux/ 之前因为看不懂官方文档，卡在某个步骤无法完成安装。翻译一下安装部分，给自己也希望能给一些同学做参考。 我的英语水平很菜，不足之处请各位斧正。 国内从Docker官方下载文件会很慢，耐心等待，有时还会连不上，重试可能会成功。 UbuntuDocke">
@@ -373,117 +374,95 @@
 <li>Ubuntu Precise 12.04 (LTS)<br><strong>注意</strong>：Ubuntu Utopic 14.10 和 15.04存在于Docker的APT存储库,但不再是官方长时间支持。</li>
 </ul>
 <h1 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h1><p>Docker 要求安装64位系统，无论是什么Ubuntu版本。此外，你的内核版本不能低于3.10。最新的3.10小版本或更新维护版本也是可以接受的。</p>
-<p>&nbsp;</p>
 <p>3.10内核缺乏运行Docker容器所需的一些特性。这些旧版本在某些情况下已知的一些bug会导致数据丢失和频繁的不稳定。</p>
-<p>&nbsp;</p>
 <p>检查你现在的内核版本，打开终端使用uname -r去显示你的内核版本：</p>
-<p>&nbsp;</p>
-<p>$ uname -r3.11.0-15-generic</p>
-<p>&nbsp;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ uname -r</div><div class="line">3.11.0-15-generic</div></pre></td></tr></table></figure>
 <p><strong>注意</strong>：如果你以前使用APT安装过Docker，确保你更新了你的APT Docker来源库。</p>
 <h1 id="升级你的apt来源库"><a href="#升级你的apt来源库" class="headerlink" title="升级你的apt来源库"></a>升级你的apt来源库</h1><p>Docker的APT库包含Docker 1.7.1和更高的版本。设置APT使用的程序包含来自Docker库：</p>
-<p>&nbsp;</p>
 <ol>
 <li>以sudo或root特权模式登入的的机器。</li>
 <li>打开一个终端窗口。</li>
-<li>升级包信息，确保APT使用https的方法工作，与安装CA证书。<br>&nbsp;</li>
+<li>升级包信息，确保APT使用https的方法工作，与安装CA证书。</li>
 </ol>
-<p>$ sudo apt-get update$ sudo apt-get install apt-transport-https ca-certificates 4. 添加新的GPG key</p>
-<p>&nbsp;</p>
-<p>$ sudo apt-key adv –keyserver hkp://p80.pool.sks-keyservers.net:80 –recv-keys 58118E89F3A912897C070ADBF76221572C52609D 5. 找到你的Ubuntu操作系统的条目，它决定了APT将搜索的包。可能的项:</p>
-<p><table></table></p>
-<p><thead></thead></p>
-<p><tr></tr></p>
-<p><td width="195"><strong>Ubuntu version</strong></td></p>
-<p><td width="521"><strong>Repository</strong></td><br><br></p>
-<p><tbody></tbody></p>
-<p><tr></tr></p>
-<p><td width="195">Precise 12.04 (LTS)</td></p>
-<p><td width="521">deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-precise main</td><br></p>
-<p><tr></tr></p>
-<p><td width="195">Trusty 14.04 (LTS)</td></p>
-<p><td width="521">deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-trusty main</td><br></p>
-<p><tr></tr></p>
-<p><td width="195">Xenial 16.04 (LTS)</td></p>
-<p><td width="521">deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-xenial main</td><br><br><br><br>6. 运行以下命令,将占位符&lt;REPO&gt;替换为您的操作系统的条目（Repository） $ echo “&lt;REPO&gt;” | sudo tee /etc/apt/sources.list.d/docker.list 例如：Ubuntu 16.04使用如下命令：$ echo “deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-xenial main” | sudo tee /etc/apt/sources.list.d/docker.list  7. 升级APT包索引 $ sudo apt-get update 8. 验证APT从正确的库拉取。 运行下面的命令时，将返回每个可供您安装的Docker版本的条目。每个条目应该有URL   <a href="https://apt.dockerproject.org/repo/。当前安装的版本使用*" target="_blank" rel="external">https://apt.dockerproject.org/repo/。当前安装的版本使用*</a> <em> </em>标记。下面是截断的输出。 $ apt-cache policy docker-engine   docker-engine:    Installed: 1.12.2-0~trusty    Candidate: 1.12.2-0~trusty    Version table:   <em>*</em> 1.12.2-0~trusty 0          500 <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="external">https://apt.dockerproject.org/repo/</a> ubuntu-trusty/main amd64 Packages          100 /var/lib/dpkg/status       1.12.1-0~trusty 0          500 <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="external">https://apt.dockerproject.org/repo/</a> ubuntu-trusty/main amd64 Packages       1.12.0-0~trusty 0          500 <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="external">https://apt.dockerproject.org/repo/</a> ubuntu-trusty/main amd64 Packages       1.11.2-0~trusty 0          500 <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="external">https://apt.dockerproject.org/repo/</a> ubuntu-trusty/main amd64 Packages       1.11.1-0~trusty 0          500 <a href="https://apt.dockerproject.org/repo/" target="_blank" rel="external">https://apt.dockerproject.org/repo/</a> ubuntu-trusty/main amd64 Packages 从现在起，当你运行apt-get upgrade，APT从新的库拉取。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get install apt-transport-https ca-certificates</div></pre></td></tr></table></figure>
+<p>4. 添加新的GPG key</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D</div></pre></td></tr></table></figure>
+<p>5. 找到你的Ubuntu操作系统的条目，它决定了APT将搜索的包。可能的项:</p>
+<table>
+<thead>
+<tr>
+<th>Ubuntu version</th>
+<th>Repository</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precise 12.04 (LTS)</td>
+<td>deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-precise main</td>
+</tr>
+<tr>
+<td>Trusty 14.04 (LTS)</td>
+<td>deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-trusty main</td>
+</tr>
+<tr>
+<td>Xenial 16.04 (LTS)</td>
+<td>deb <a href="https://apt.dockerproject.org/repo" target="_blank" rel="external">https://apt.dockerproject.org/repo</a> ubuntu-xenial main</td>
+</tr>
+</tbody>
+</table>
+<p>6. 运行以下命令,将占位符&lt;REPO&gt;替换为您的操作系统的条目（Repository）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ echo &quot;&lt;REPO&gt;&quot; | sudo tee /etc/apt/sources.list.d/docker.list</div></pre></td></tr></table></figure></p>
+<p>例如：Ubuntu 16.04使用如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ echo &quot;deb https://apt.dockerproject.org/repo ubuntu-xenial main&quot; | sudo tee /etc/apt/sources.list.d/docker.list</div></pre></td></tr></table></figure></p>
+<p>7. 升级APT包索引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div></pre></td></tr></table></figure></p>
+<p>8. 验证APT从正确的库拉取。<br>运行下面的命令时，将返回每个可供您安装的Docker版本的条目。每个条目应该有URL   <a href="https://apt.dockerproject.org/repo/。当前安装的版本使用***标记。下面是截断的输出。" target="_blank" rel="external">https://apt.dockerproject.org/repo/。当前安装的版本使用***标记。下面是截断的输出。</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$ apt-cache policy docker-engine</div><div class="line"></div><div class="line">   docker-engine:</div><div class="line">    Installed: 1.12.2-0~trusty</div><div class="line">    Candidate: 1.12.2-0~trusty</div><div class="line">    Version table:</div><div class="line">   *** 1.12.2-0~trusty 0</div><div class="line">          500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</div><div class="line">          100 /var/lib/dpkg/status</div><div class="line">       1.12.1-0~trusty 0          </div><div class="line">500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</div><div class="line">       1.12.0-0~trusty 0</div><div class="line">          500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</div><div class="line">       1.11.2-0~trusty 0</div><div class="line">          500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</div><div class="line">       1.11.1-0~trusty 0</div><div class="line">          500 https://apt.dockerproject.org/repo/ ubuntu-trusty/main amd64 Packages</div></pre></td></tr></table></figure></p>
+<p>从现在起，当你运行apt-get upgrade，APT从新的库拉取。</p>
 <h1 id="各Ubuntu版本的必备条件"><a href="#各Ubuntu版本的必备条件" class="headerlink" title="各Ubuntu版本的必备条件"></a>各Ubuntu版本的必备条件</h1><ul>
 <li>Ubuntu Xenial 16.04 (LTS)</li>
 <li>Ubuntu Trusty 14.04 (LTS)<br>对于Ubuntu Trusty和Xenial，建议安装linux-image-extra-<em> 内核包。这些linux-image-extra-</em> 包允许你使用aufs存储驱动。</li>
 </ul>
-<p>&nbsp;</p>
 <p>安装linux-image-extra-*包：</p>
-<p>&nbsp;</p>
 <p>1.在你的Ubuntu主机打开一个终端</p>
-<p>2.升级你的包管理器</p>
-<p>&nbsp;</p>
-<p>$ sudo apt-get update</p>
-<p>3.安装建议的包</p>
-<p>&nbsp;</p>
-<p>$ sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual</p>
-<p>&nbsp;</p>
+<p>2.升级你的包管理器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div></pre></td></tr></table></figure></p>
+<p>3.安装建议的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual</div></pre></td></tr></table></figure></p>
 <p>4.继续安装Docker</p>
 <h2 id="Ubuntu-Precise-12-04-LTS"><a href="#Ubuntu-Precise-12-04-LTS" class="headerlink" title="Ubuntu Precise 12.04 (LTS)"></a>Ubuntu Precise 12.04 (LTS)</h2><p>对于Ubuntu Precise ，Docker要求3.13内核版本。如果你的内核版本低于3.13，你必须升级它。参考这个表看哪些包是你的环境需要的：</p>
-<p><table></table></p>
-<p><thead></thead></p>
-<p><tr></tr></p>
-<p><td width="233"><strong>Package</strong></td></p>
-<p><td width="537"><strong>Description</strong></td><br><br></p>
-<p><tbody></tbody></p>
-<p><tr></tr></p>
-<p><td width="233"><strong>linux-image-generic-lts-trusty</strong></td></p>
-<p><td width="537">Generic Linux kernel image. This kernel has AUFS built in. This is required to run Docker.</td><br></p>
-<p><tr></tr></p>
-<p><td width="233"><strong>linux-headers-generic-lts-trusty</strong></td></p>
-<p><td width="537">Allows packages such as ZFS and VirtualBox guest additions which depend on them. If you didn’t install the headers for your existing kernel, then you can skip these headers for the”trusty” kernel. If you’re unsure, you should include this package for safety.</td><br></p>
-<p><tr></tr></p>
-<p><td width="233"><strong>xserver-xorg-lts-trusty</strong></td></p>
-<p><td width="537">Optional in non-graphical environments without Unity/Xorg. Required when running Docker on machine with a graphical environment.</td><br></p>
-<p><tr></tr></p>
-<p><td width="233"><strong>libgl1-mesa-glx-lts-trusty</strong></td></p>
-<p><td width="537">To learn more about the reasons for these packages, read the installation instructions for backported kernels, specifically the <a href="https://wiki.ubuntu.com/Kernel/LTSEnablementStack" target="_blank" rel="external">LTS Enablement Stack</a> — refer to note 5 under each version.</td><br><br><br><br>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>linux-image-generic-lts-trusty</td>
+<td>Generic Linux kernel image. This kernel has AUFS built in. This is required to run Docker.</td>
+</tr>
+<tr>
+<td>linux-headers-generic-lts-trusty</td>
+<td>Allows packages such as ZFS and VirtualBox guest additions which depend on them. If you didn’t install the headers for your existing kernel, then you can skip these headers for the”trusty” kernel. If you’re unsure, you should include this package for safety.</td>
+</tr>
+<tr>
+<td>xserver-xorg-lts-trusty</td>
+<td>Optional in non-graphical environments without Unity/Xorg. Required when running Docker on machine with a graphical environment.</td>
+</tr>
+<tr>
+<td>libgl1-mesa-glx-lts-trusty</td>
+<td>To learn more about the reasons for these packages, read the installation instructions for backported kernels, specifically the <a href="https://wiki.ubuntu.com/Kernel/LTSEnablementStack" target="_blank" rel="external">LTS Enablement Stack</a> — refer to note 5 under each version.</td>
+</tr>
+</tbody>
+</table>
 <p>升级您的内核和安装额外的包,执行以下操作：</p>
-<p>&nbsp;</p>
-<ol>
-<li>在你的Ubuntu主机打开一个终端</li>
-<li>升级你的包管理器<br>&nbsp;</li>
-</ol>
-<p>$ sudo apt-get update</p>
-<p>&nbsp;</p>
-<ol>
-<li>安装必需和可选包<br>&nbsp;</li>
-</ol>
-<p>$ sudo apt-get install linux-image-generic-lts-trusty</p>
-<p>&nbsp;</p>
+<p>1.  在你的Ubuntu主机打开一个终端<br>2.  升级你的包管理器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div></pre></td></tr></table></figure></p>
+<p>3.  安装必需和可选包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install linux-image-generic-lts-trusty</div></pre></td></tr></table></figure></p>
 <p>取决于您的环境,您可能安装上表中所描述的。</p>
-<p>&nbsp;</p>
-<ol>
-<li>重启你的主机<br>&nbsp;</li>
-</ol>
-<p>$ sudo reboot 5. 你的系统重启后，继续安装Docker</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>&nbsp;</p>
-<p>确保你的Ubuntu版本完成了对应必备条件的准备：</p>
-<p>&nbsp;</p>
-<p>然后，执行以下操作安装Docker：</p>
-<p>&nbsp;</p>
-<ol>
-<li>作为sudo特权用户登入你的Ubuntu进行安装</li>
-<li>升级你的APT包索引<br>&nbsp;</li>
-</ol>
-<p>$ sudo apt-get update</p>
-<p>&nbsp;</p>
-<ol>
-<li>安装Docker<br>&nbsp;</li>
-</ol>
-<p>$ sudo apt-get install docker-engine</p>
-<p>&nbsp;</p>
-<ol>
-<li>启动docker守护进程<br>&nbsp;</li>
-</ol>
-<p>$ sudo service docker start</p>
-<ol>
-<li>确认docker安装正确<br>&nbsp;</li>
-</ol>
-<p>$ sudo docker run hello-world 此命令将下载一个测试镜像并在一个容器里运行它，当容器运行，它打印一个消息性信息。然后退出。</p>
+<p>4.  重启你的主机<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo reboot</div></pre></td></tr></table></figure></p>
+<p>5. 你的系统重启后，继续安装Docker</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>确保你的Ubuntu版本完成了对应必备条件的准备：<br>然后，执行以下操作安装Docker：</p>
+<p>1.  作为sudo特权用户登入你的Ubuntu进行安装<br>2.  升级你的APT包索引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get update</div></pre></td></tr></table></figure></p>
+<p>3.  安装Docker<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install docker-engine</div></pre></td></tr></table></figure></p>
+<p>4.  启动docker守护进程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo service docker start</div></pre></td></tr></table></figure></p>
+<p>5.  确认docker安装正确<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo docker run hello-world</div></pre></td></tr></table></figure></p>
+<p>此命令将下载一个测试镜像并在一个容器里运行它，当容器运行，它打印一个消息性信息。然后退出。</p>
 
       
     </div>
@@ -531,6 +510,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+        </div>
       
 
       
@@ -649,7 +634,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
