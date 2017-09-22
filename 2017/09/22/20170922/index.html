@@ -108,7 +108,7 @@
 <meta property="og:image" content="https://lykyk.github.io/posts_images/20170922/3_1.png">
 <meta property="og:image" content="https://lykyk.github.io/posts_images/20170922/3_2.png">
 <meta property="og:image" content="https://lykyk.github.io/posts_images/20170922/4.png">
-<meta property="og:updated_time" content="2017-09-22T11:54:26.543Z">
+<meta property="og:updated_time" content="2017-09-22T12:11:05.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何得到完整的 .ts 视频">
 <meta name="twitter:description" content="昨晚在Panda TV看到infoQ的一个视频想下载，播放器使用的是Flash Player，打开浏览器开发者工具-&amp;gt;网络-&amp;gt;媒体，看到有很多.ts后缀的视频文件，视频是被分成了一个个片段下载的。将视频进度拖到其他位置，就下载对应的片段，由于.ts视频不可以分段后直接解码，所以可以直接播放分段后的.ts视频。  视频被分成了许多小片段，如何得到完整的视频呢  0x00. 视频片段是按文">
@@ -364,7 +364,7 @@
 <p>视频被分成了许多小片段，如何得到完整的视频呢</p>
 </blockquote>
 <p><strong>0x00.</strong> 视频片段是按文件名最后的数值排列的，按照这个规律，复制第一个片段的地址，放到Excel等表格工具里。<br><img src="../../../../posts_images/20170922/0.png" alt="image"><br><img src="../../../../posts_images/20170922/0_1.png" alt="image"><br><img src="../../../../posts_images/20170922/0_2.png" alt="image"></p>
-<p><strong>0x01.</strong> 选中后按住右下角的小方点往下拖就可以自动生成之后的地址的了，一直拖到生成到视频的最后一个片段的地址，将生成的地址复制下来。<br><img src="../../../../posts_images/20170922/1.png" alt="image"></p>
+<p><strong>0x01.</strong> 选中后按住右下角的小方点往下拖就可以自动生成之后的地址了，一直拖到生成到视频的最后一个片段的地址，将生成的地址复制下来。<br><img src="../../../../posts_images/20170922/1.png" alt="image"></p>
 <p><strong>0x02.</strong> 打开迅雷，一般会自动新建任务并自动粘贴复制好的地址，若没有则手动新建任务并粘贴复制好的地址（现在迅雷最多支持同时新建1000个任务，太多的可以分开一些），任务太多的最好勾上[合并为任务组]，以免清理任务的麻烦。新建一个文件夹专门存放下载的视频。<br><img src="../../../../posts_images/20170922/2.png" alt="image"></p>
 <p><strong>0x03.</strong> 下载完成后使用CMD命令合并即可。<br> 例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">copy/b E:\temps\*.ts E:\temps\new.ts</div></pre></td></tr></table></figure></p>
 <p>可以参考这篇文章 &gt;&gt;&gt;<a href="http://blog.sina.com.cn/s/blog_66b4f1180102uzxs.html" target="_blank" rel="external">无需软件合并多个TS流文件</a><br><img src="../../../../posts_images/20170922/3_1.png" alt="image"><br><img src="../../../../posts_images/20170922/3_2.png" alt="image"></p>
