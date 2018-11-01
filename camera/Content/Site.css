@@ -1,0 +1,121 @@
+body {
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	padding: 0;
+	margin: 0;
+}
+*{
+	padding: 0;
+	margin: 0;
+}
+/* Set padding to keep content from hitting the edges */
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.custom_number{
+    font-size:12px;
+    color:#99a3b0;
+    margin-bottom:10px;
+}
+.changeNetwork{
+	font-size:14px;
+	cursor: pointer;
+}
+.tip_more-image{
+	background-image: url('../Images/net-tip.svg');
+	background-size: contain;
+	background-position: center;
+    background-repeat:no-repeat;
+	width: 290px;
+	height: 135px;
+	margin: 0 auto;
+}
+.content_wrap{
+	padding: 0px 35px;
+	width: 330px;
+	text-align: center;
+    line-height: 200px;
+    position: relative;
+    clear: both;
+    box-sizing:content-box;
+}
+
+.tip_content{
+	font-size:14px;
+	color:#ff4e2d;
+	letter-spacing:0;
+	margin-bottom: 35px;
+	line-height:26px;
+	text-align:center;
+}
+.tip_advice{
+	font-size:12px;
+	color:#7e8996;
+	letter-spacing:0;
+	line-height:20px;
+	text-align:center;
+	width: 330px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+.tip_image{
+	margin: 0px auto 20px auto;
+	width: 35px;
+	height: 35px;
+	background-image: url('../Images/tip_icon.png');
+	background-repeat: no-repeat;
+	background-size: 35px 35px;
+}
+.net_wrap .net_sure{
+	display: inline-block;
+    width: 100px;
+    height: 32px;
+    background-color:#33a5f7;
+    text-align: center;
+    line-height: 32px;
+    color: #fff;
+    border-radius: 3px;
+	margin: 30px auto 30px;
+	cursor: pointer;
+    box-sizing:border-box;
+}
+.net_wrap {
+    position: fixed;
+    z-index: 102;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -200px;
+    background-color: #ffffff;
+    padding-top:5px;
+    box-sizing:border-box;
+}
+.net_wrap .close_pop{
+	margin-right: 10px;
+}
+.suggestionContainer{
+	background:#fcf8e3;
+	border:1px solid #e5e0c6;
+	width:400px;
+	height:102px;
+	padding: 22px 25px;
+	margin-top: 18px;
+    box-sizing: border-box;
+}
+.suggestionContainer div{
+	line-height: 28px;
+	color:#88753d;
+}
+.suggestionContainer .first{
+	display: inline-block;
+	margin-right: 20px;
+}
+.errorTip_container{
+	margin-left: 312px;
+	margin-top: -58px;
+}

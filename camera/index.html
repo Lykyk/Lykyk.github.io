@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Index</title>
+    <script src="./Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="./Scripts/i18n-0.1.1.js" type="text/javascript"></script>
+    <script src="./Scripts/EnvDetect-0.1.3.js" type="text/javascript"></script>
+    <script src="./Scripts/qrcode.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./Content/Site.css" type="text/css">
+    <link rel="stylesheet" href="./Content/home.css" type="text/css">
+</head>
+<body>
+    <div class="main-region"> 
+      <div class="qhead-wrap">
+     			<div>
+  	   			<div class="qrcode-head-left">
+                      <div class="header_number">北森客服：400-650-6886</div>
+                </div>
+  	   			<div class="qrcode-head-right">
+  	   				<span class="back">返回</span>
+  	   			</div>
+     			</div>
+   		</div>
+   		<div class="content-wrap">
+   			<div>
+	   			<ul class="test-list">
+	   				<li data-type="1"><span>摄像头</span></li>
+	   				<li data-type="2"><span>手机拍照上传</span></li>
+	   				<li data-type="3"><span>在线编程须知</span></li>
+	   				<li data-type="4"><span>网络检测</span></li>
+	   			</ul>
+	   		</div>
+	   		<div class="test-container">
+            <div class="test-box">
+                <div class="common_status">
+                     <span class="status_ico"></span>
+                     <span class="status_result">检测中...</span>
+                </div>
+              <div class="mess">您正在使用的浏览器需要调整摄像头,请点击浏览器右上角弹窗中的"允许"按钮.</div>
+              <div style="position:relative;width:400px;margin:0 auto">
+                <video id="video" height="300" width="400" style="background-color:#39434f;"></video>
+              </div>
+            </div>
+              <div class="test-box">
+                <div class="pic_mess">
+                  <p>部分题目可以在纸上答题后拍照上传，请按下面的步骤进行检测：</p>
+                  <div class="step_pic"></div>
+                  <ul class="update_picture">
+                      <li>
+                          <div>请先用手机拍摄需要上传的图片，拍摄时保持光线充足，切勿拍虚，画面中不得出现答题纸之外的物品</div>
+                      </li>
+                      <li>
+                          <div class="qrcode-wrap">
+                            <img src="" />
+                          </div>
+                      </li>
+                      <li>
+                          <div>在手机打开的上传页面选择需上传的照片，点击下方的“上传”按钮，等待至提示“上传成功”</div>
+                      </li>
+                      <li class="last_item">
+                          <div>
+                              <span class="preview_button">点击预览</span>
+                              <p>请确认预览是图片清晰可辨，如果图片过于模糊，将会导致作答效果无效</p>
+                          </div>
+                      </li>
+                  </ul>
+                </div>
+            </div>
+              <div class="test-box">
+                  <div class="code_info">
+                      <ul>
+                          <li>
+                              <div class="num"></div>
+                              <div class="float_right">
+                                <div class="info_title">请勿作弊</div>
+                                <span class="short_line"></span>
+                                <div class="info_wrap">
+                                    <span>请在当前网页中答题，不允许在本地环境编程。</span>
+                                    <span style="margin-top:10px">考试结束后系统将进行雷同检测，请勿抄袭。</span>
+                                </div>
+                              </div>
+                          </li>
+                          <li>
+                              <div class="num num2"></div>
+                              <div class="float_right">
+                                <div class="info_title">开始编程</div>
+                                <span class="short_line"></span>
+                                <div class="info_wrap">
+                                    <span>
+                                        系统根据你选择的语言来运行代码，请勿错选。
+                                    </span>
+                                    <span style="margin-top:10px">请认真阅读题目要求，严格按样例数据的格式输入和输出。</span>
+                                </div>
+                              </div>
+                          </li>
+                           <li>
+                             <div class="num num3"></div>
+                             <div class="float_right">
+                                <div class="info_title">在线调试</div>
+                                <span class="short_line"></span>
+                                <div class="info_wrap">
+                                    <span>
+                                        除了提交代码，你还自己输入测试数据，自己分析结果。系统不会告诉你正确还是错误。
+                                    </span>
+                                    <span style="margin-top:10px">即使运行成功也要认真检查，是否考虑到了每种情况，是否有多余或缺少的字符（注意空格和换行）。</span>
+                                </div>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="lan_info"><span>语言说明</span></div>
+                  <div class="lan_wrap">
+                      <div class="lan_head">
+                          <ul>
+                              <li class="active_lan">C</li>
+                              <li>C++</li>
+                              <li>C#</li>
+                              <li>Java</li>
+                              <li>Python</li>
+                              <li>PHP</li>
+                              <li>JavaScript</li>
+                          </ul>
+                      </div>
+                      <div class="introduce">
+                          <span>说明</span>
+                          <span>输入输出示例</span>
+                      </div>
+                      <div class="common_lan_box active_box">
+                            <div class="left_wrap">
+                                <span>
+                                   使用gcc 4.9.4编译运行。禁止使用图形、文件、网络、系统相关的操作，如sys/stat.h，unistd.h，curl/curl.h，process.h等。 
+                                </span>
+                                <span>
+                                  <b>如何输入</b>
+                                  <span>
+                                      请使用格式化输入函数(scanf( ))，也可以使用非格式化输入函数(如gets( )).<br/>
+                                      调试代码时你需要手动输入测试数据，请严格按照题目样例格式输入。
+                                  </span>
+                                </span>
+                                <span>
+                                    <b>如何输出</b>
+                                    <span>请格式化输出函数(printf ( ))；也可以使用非格式化输出函数(如puts( ))。</span>
+                                    <br/>
+                                </span>
+                            </div>
+                            <div class="right_wrap">
+                                <pre>
+                                  //输入一组数据并输出 
+                                  int a,b; 
+                                  scanf("％d %d”,&a,&b); 
+                                  printf("%d %d\n”,a,b); 
+
+                                  //输入多组数据并输出 
+                                  int a[100],b[100],i; 
+                                  while(scanf("%d %d",&a[i],&b[i])!=EOF) 
+                                  { 
+                                    printf("%d %d\n",a[i],b[i]); 
+                                    i++; 
+                                  } 
+                                </pre>
+                            </div>
+                      </div>
+                      <div class="common_lan_box">
+                            <div class="left_wrap">
+                                <span>
+                                   使用g++ 4.9.4编译运行。禁止使用图形、文件、网络、系统相关的操作，如process.h，graphics.h，sys/stat.h，unistd.h，curl/curl.h等。
+                                </span>
+
+                                <span>
+                                  <b>如何输入</b>
+                                  <span>
+                                      请使用格式化输入函数(cin)。
+                                      调试代码时你需要手动输入测试数据，请严格按照题目样例格式输入。
+                                  </span>
+                                </span>
+                                <span>
+                                    <b>如何输出</b>
+                                    <span>请使用格式化输出函数(cout)。</span>
+                                </span>
+                            </div>
+                            <div class="right_wrap">
+                                <pre>
+                                  //输入一组数据并输出 
+                                    int a, b; 
+                                    cin>> a >> b; 
+                                    cout << a << b << endl; 
+
+                                //输入多组数据并输出 
+                                    int a, b; 
+                                    while(cin>> a >> b) 
+                                         cout << a << b << endl;
+                                </pre>
+                            </div>
+                      </div>
+                       <div class="common_lan_box">
+                            <div class="left_wrap">
+                                <span>
+                                   使用.NET 4编译运行。禁止使用图形、文件、网络、系统相关的操作，如ystem.Drawing，System.IO，System.ServiceProcess，System.Threading，System.Windows等。 
+                                </span>
+                                <span>
+                                  <b>如何输入</b>
+                                  <span>
+                                      请使用系统输入函数(System.Console.ReadLine())。 <br/>
+                                      调试代码时你需要手动输入测试数据，请严格按照题目样例格式输入。
+                                  </span>
+                                </span>
+                                <span>
+                                    <b>如何输出</b>
+                                    <span>请使用系统输出函数(System.Console.WriteLine())。</span>
+                                </span>
+                            </div>
+                            <div class="right_wrap">
+                                <pre>
+                                <br/>
+                                  //输入一组数据并输出 
+                                     string str= Console.ReadLine()
+                                     Console.WriteLine(str);
+                                //输入多组数据并输出 
+                                     string str; 
+                                     while((str=Console.ReadLine())!=null) 
+                                          Console.WriteLine(str);
+                                 <br/>
+                                 <br/>
+                                </pre>
+                            </div>
+                      </div>
+                        <div class="common_lan_box">
+                            <div class="left_wrap">
+                                <span>
+                                   使用jdk 1.8编译运行。禁止使用图形、文件、网络、系统相关的操作，如java.lang.Process，javax.swing.JFrame，Runtime.getRuntime等。
+                                </span>
+                                <span>
+                                  <b>如何输入</b>
+                                  <span>
+                                      请使用标准输入函数(System.in)。<br/>
+                                      调试代码时你需要手动输入测试数据，请严格按照题目样例格式输入。
+                                  </span>
+                                </span>
+                                <span>
+                                    <b>如何输出</b>
+                                    <span>请使用标准输出函数(System.out)。</span>
+                                </span>
+                            </div>
+                            <div class="right_wrap">
+                                <pre>
+                                  //输入一组数据并输出 
+                                     Scanner sc = new Scanner(System.in); 
+                                     String str=sc.nextLine(); 
+                                     System.out.printf("%s\n",str); 
+
+                                //输入多组数据并输出 
+                                     Scanner sc = new Scanner(System.in); 
+                                     String str; 
+                                     while(sc.hasNextLine()){ 
+                                          str = sc.nextLine(); 
+                                         System.out.printf("%s\n",str); 
+                                      } 
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="common_lan_box">
+                            <div class="left_wrap">
+                                <span>
+                                   使用python 2.7.10解释运行。禁止使用图形、文件、网络、系统相关的操作，如Process，httplib，os等。
+                                </span>
+                                <span>
+                                  <b>如何输入</b>
+                                  <span>
+                                      请使用系统输入函数(raw_input()，input())。 <br/>
+                                      调试代码时你需要手动输入测试数据，请严格按照题目样例格式输入。
+                                  </span>
+                                </span>
+                                <span>
+                                    <b>如何输出</b>
+                                    <span>请使用系统输出函数(print)。</span>
+                                </span>
+                            </div>
+                            <div class="right_wrap">
+                                <pre>
+                                 //输入一组数据并输出 
+                                  str=raw_input()
+                                  print str
+
+                                  //输入多组数据并输出 
+                                  import sys 
+                                  for line in sys.stdin: 
+                                      for value in line.split(): 
+                                          print(value) 
+                                </pre>
+                              </div>
+                      </div>
+                        <div class="common_lan_box">
+                            <div class="left_wrap">
+                                <span>
+                                   使用PHP 5.3.3解释运行。禁止使用图形、文件、网络、系统相关的操作，如Fileinfo，Filesystem，POSIX等
+                                </span>
+                                <span>
+                                  <b>如何输入</b>
+                                  <span>
+                                      请使用系统输入函数(fgets())。 <br/>
+                                      调试代码时你需要手动输入测试数据，请严格按照题目样例格式输入。
+                                  </span>
+                                </span>
+                                <span>
+                                    <b>如何输出</b>
+                                    <span>请使用系统输出函数(echo，print()，print_r())。</span>
+                                </span>
+                            </div>
+                            <div class="right_wrap">
+                                <pre>
+                                  //输入一组数据并输出 
+                                    $str=fgets(STDIN,1000);
+                                    echo $str;
+
+                                    //输入多组数据并输出 
+                                    $s = fgets(STDIN,1000); 
+                                    while ($s != "") { 
+                                        print ($s); 
+                                        $s = fgets(STDIN,1000); 
+                                    }  
+                                </pre>
+                            </div>
+                      </div>
+                      <div class="common_lan_box">
+                            <div class="left_wrap">
+                                <span>
+                                   使用Google V8 Engine解释运行。禁止使用图形、文件、网络、系统相关的操作。请勿修改主函数名main()。
+                                </span>
+                                <span>
+                                  <b>如何输入</b>
+                                  <span>
+                                      调试代码时你需要手动输入测试数据，请严格按照题目样例格式输入。
+                                      输入数据时，字符串数据前后需加英文引号。输入多个数据时请用英文逗号隔开，并且与main()中参数个数相同。
+                                  </span>
+                                </span>
+                                <span>
+                                    <b>如何输出</b>
+                                    <span>请使用console.log()输出。</span>
+                                    <br/>
+                                </span>
+                            </div>
+                            <div class="right_wrap">
+                                <pre>
+                                 //输入一组数据并输出 
+                                  function main(a1,a2,a3,a4,a5,a6){
+                                    console.log(a1,a2,a3,a4,a5,a6);
+                                  }
+                                </pre>
+                            </div>
+                      </div>
+                      <div class="common_lan_box">
+                            <div class="left_wrap">
+                                <span>
+                                   使用Google V8 Engine解释运行。禁止使用图形、文件、网络、系统相关的操作。请勿修改主函数名main()。
+                                </span>
+                                <span>
+                                  <b>如何输入</b>
+                                  <span>
+                                      调试代码时你需要手动输入测试数据，请严格按照题目样例格式输入。 
+                                      输入数据时，字符串数据前后需加英文引号。输入多个数据时请用英文逗号隔开，并且与main()中参数个数相同。
+                                  </span>
+                                </span>
+                                <span>
+                                    <b>如何输出</b>
+                                    <span>请使用console.log()输出。</span>
+                                </span>
+                            </div>
+                            <div class="right_wrap">
+                                <pre>
+                                  //输入一组数据并输出 
+                                    function main(a1,a2,a3,a4,a5,a6){
+                                      console.log(a1,a2,a3,a4,a5,a6);
+                                    }
+                                </pre>
+                            </div>
+                      </div>
+                  </div>
+                  <div class="lan_info"><span>答题界面</span></div> 
+                   <div class="img_box">
+                      <img src="./Images/test_img.png" />
+                       <img src="./Images/test_img_run.png" />
+                      <div class="foot-wrap">
+                          <div class="custom_number">北森客服：400-650-6886</div>
+                                <span class="copy_right">
+                                      © 2002-2013北森 人才管理软件及解决方案 京ICP备05051632号
+                                      <a class="police" target="_blank" href=" http://bsurl.cn/7lhZHzQT"><span></span>京公网安备11010802020454号</a>
+                                </span>
+                      </div>
+                   </div>
+                  </div>
+              <div class="test-box">
+                  <div class="common_status">
+                        <span class="status_ico"></span>
+                        <span class="status_result">检测中...</span>
+                  </div>
+                    <div class="test_speed">
+                        <p>为了保证答题顺利，建议活动开始前30min再次检测网速。</p>
+                    </div>
+                        <table class="web_speed">
+                            <tr>
+                                <td>检测网速</td>
+                                <td>
+                                    <span class="true_speed"></span>
+                                    <span class="dete">——</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>推荐网速</td>
+                                <td>
+                                &gt;<span class="reco">100</span>
+                                kb/s
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>网络状态</td>
+                                <td><span class='net_status'>--</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    推荐方案
+                                </td>
+                                <td>
+                                    <span class="changeNetwork">--</span>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- <table class="web_speed network_table">
+                            
+                        </table> -->
+                    <div class="re_test_btn"><a>重新检测</a></div>
+                </div>
+            </div>
+	   		</div>
+   		</div>
+      <div class="foot-wrap">
+          <div class="custom_number">北森客服：400-650-6886</div>
+          <span class="copy_right">
+                © 2002-2013北森 人才管理软件及解决方案 京ICP备05051632号
+                <a class="police" target="_blank" href=" http://bsurl.cn/7lhZHzQT"><span></span>京公网安备11010802020454号</a>
+          </span>
+      </div>
+    </div>
+</body>
+</html>
